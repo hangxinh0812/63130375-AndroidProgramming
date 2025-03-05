@@ -45,3 +45,93 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+import ...
+
+public class MainActivity extends AppCompatActivity {
+    Button btnSayHello;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // B3: gán bộ lắng nghe cho nút bấm
+        btnSayHello = findViewById(R.id.btnSayHi);
+        btnSayHello.setOnClickListener(bo_lang_nghe_XL_XinChao);
+    }
+
+    // 2.1 Listener in Variable
+    // B1 + B2
+    View.OnClickListener bo_lang_nghe_XL_XinChao = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Code xử lý ở đây
+        }
+    };
+}
+// 2.1 Listener in Variable
+// B1 + B2
+View.OnClickListener bo_lang_nghe_XL_XinChao = new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        // Code xử lý ở đây
+
+        // Ví dụ, hiện thông báo nhanh bằng lớp Toast
+        Toast.makeText(ngữ cảnh, nội dung Tbao, thời gian hiện).show();
+
+        Toast.makeText(MainActivity.this,
+                "Chào all HTTT và các bạn ",
+                Toast.LENGTH_LONG).show();
+    }
+};
+btnSayHello.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        // Xử lý khi nút được nhấn
+        Toast.makeText(MainActivity.this, "Chào all HTTT và các bạn", Toast.LENGTH_LONG).show();
+    }
+});
+        btnSayHello.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        // Code xử lý ở đây
+    }
+});
+// Cách Activity làm Listener
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Button btnSayHello;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnSayHello = findViewById(R.id.btnSayHi);
+        btnSayHello.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        // Xử lý sự kiện click ở đây
+    }
+}
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Button btnSayHello;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnSayHello = findViewById(R.id.btnSayHi);
+        btnSayHello.setOnClickListener(this); // Quan trọng! Đăng ký sự kiện click
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnSayHi) { // Xác định view nào được click
+            Toast.makeText(this, "Chào HTTT và các bạn!", Toast.LENGTH_LONG).show();
+        }
+    }
+}
+
