@@ -16,4 +16,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <FrameLayout
+        android:id="@+id/fragmentcontenthoder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#E2B1C2"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentfooterhoder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentfooterhoder"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="#A03C5E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
