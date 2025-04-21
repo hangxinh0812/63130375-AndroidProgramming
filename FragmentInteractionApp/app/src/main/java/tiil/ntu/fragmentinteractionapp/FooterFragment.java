@@ -23,13 +23,45 @@ public class FooterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =inflater.inflate(R.layout.fragment_footer, container, false);
+        View v = inflater.inflate(R.layout.fragment_footer, container, false);
         //find wiew
-        Button b1 =v.findViewById(R.id.button);
-        Button b2 =v.findViewById(R.id.button2);
-        Button b3 =v.findViewById(R.id.button3);
+        Button b1 = v.findViewById(R.id.button);
+        Button b2 = v.findViewById(R.id.button2);
+        Button b3 = v.findViewById(R.id.button3);
         //
-        FragmentManager fragmentManager =getParentFragmentManager();
+        FragmentManager fragmentManager = getParentFragmentManager();
+        //event
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //code here
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView_Content, new Fragment1())
+                        .commit();
+
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //code here
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView_Content, new Fragment2())
+                        .commit();
+
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //code here
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView_Content, new Fragment3())
+                        .commit();
+
+            }
+        });
 
         return v;
+    }
 }
