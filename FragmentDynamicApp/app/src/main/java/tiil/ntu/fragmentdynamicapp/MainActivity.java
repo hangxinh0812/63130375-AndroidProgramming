@@ -26,6 +26,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction()
                 .add(R.id.fragmentcontenthoder, new ContentFragment())
                 .add(R.id.fragmentfooterhoder, new FooterFragment())
-                .commit()
+                .commit();
     }
 }
