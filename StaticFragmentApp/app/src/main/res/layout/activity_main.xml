@@ -15,7 +15,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    
+
+   <!-- <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        <fragmentm
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            
+    -->
     <fragment
         android:id="@+id/ChanTrang"
         android:name="tiil.ntu.staticfragmentapp.FooterFragment"
