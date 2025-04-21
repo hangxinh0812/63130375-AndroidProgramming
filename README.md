@@ -11,7 +11,7 @@
 
 -Fragments Interaction App
 
-.page Home
+.Page Home
 
 ![image](https://github.com/user-attachments/assets/ea17c65d-a6b8-4c7f-a50a-6bf18830abad)
 
