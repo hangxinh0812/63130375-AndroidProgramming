@@ -8,7 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+
+// Chú ý: không import android.R; nếu có, hãy xóa để dùng đúng R của project
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNav;
@@ -20,36 +21,41 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNav = findViewById(R.id.bot_nav);
 
-        // Lắng nghe khi chọn item lần đầu
-        bottomNav.setOnItemSelectedListener(
-                new NavigationBarView.OnItemSelectedListener() {
+        // Xử lý khi chọn lần đầu (select)
+        bottomNav.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.mnu_home:
-                                Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
-                                return true;
-                            case R.id.mnu_search:
-                                Toast.makeText(MainActivity.this, "Search", Toast.LENGTH_SHORT).show();
-                                return true;
-                            case R.id.mnu_profile:
-                                Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
-                                return true;
-                            default:
-                                return false;
+                        int id = item.getItemId();
+                        if (id == R.id.mnu_home) {
+                            Toast.makeText(MainActivity.this, "Thay HOME", Toast.LENGTH_SHORT).show();
+                            // TODO: replace fragment Home
                         }
+                        else if (id == R.id.mnu_search) {
+                            Toast.makeText(MainActivity.this, "Thay SEARCH", Toast.LENGTH_SHORT).show();
+                            // TODO: replace fragment Search
+                        }
+                        else if (id == R.id.mnu_profile) {
+                            Toast.makeText(MainActivity.this, "Thay PROFILE", Toast.LENGTH_SHORT).show();
+                            // TODO: replace fragment Profile
+                        }
+                        else {
+                            return false;  // không phải item bạn muốn bắt
+                        }
+                        return true;  // đã xử lý
                     }
                 }
         );
 
-        // (Tùy chọn) Lắng nghe khi tái chọn cùng một item
-        bottomNav.setOnItemReselectedListener(
-                new NavigationBarView.OnItemReselectedListener() {
+        // Xử lý khi re-select (chọn lại cùng một tab)
+        bottomNav.setOnNavigationItemReselectedListener(
+                new BottomNavigationView.OnNavigationItemReselectedListener() {
                     @Override
                     public void onNavigationItemReselected(@NonNull MenuItem item) {
                         Toast.makeText(MainActivity.this,
                                 "Reselected: " + item.getTitle(),
                                 Toast.LENGTH_SHORT).show();
+                        // TODO: ví dụ scroll to top, refresh nội dung...
                     }
                 }
         );
